@@ -11,7 +11,6 @@ import Descuento from "@/pages/Descuento.jsx";
 import Spa from "@/pages/Spa";
 import Confirmation from "@/pages/Confirmation";
 import Error from "@/pages/Error";
-import UserProfile from "@/pages/UserProfile";
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
@@ -28,7 +27,6 @@ const AppRoutes = () => {
       <Route path="/contacto" element={<Contacto />} />
       <Route path="/spa" element={<Spa />} />
       <Route path="/confirmation" element={<Confirmation />} />
-      <Route path="/userProfile" element={<UserProfile />} />
       <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
       </Route>
