@@ -11,9 +11,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [usuario, setUsuario] = useState("");
   const languageRef = useRef<HTMLDivElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
 
-  // Recuperar el idioma almacenado en localStorage al cargar
   useEffect(() => {
     const storedLanguage = localStorage.getItem("language");
     if (storedLanguage) {
@@ -44,25 +42,6 @@ const Header = () => {
       window.location.href = "/";
     }, 500);
   };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        languageRef.current &&
-        !languageRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-        setIsLanguageOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50">
@@ -125,7 +104,7 @@ const Header = () => {
                 {t("login.login")}
               </Link>
             )}
-            <div className="relative" ref={menuRef}>
+            <div className="relative">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex cursor-pointer items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors"
@@ -199,7 +178,7 @@ const Header = () => {
                 <span>{t("header.language")}</span>
               </button>
               {isLanguageOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-200">
+                <div className=" relative left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-200">
                   <button
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={() => changeLanguage("en")}
@@ -215,13 +194,15 @@ const Header = () => {
                 </div>
               )}
             </div>
-
-            <a
-              href="#"
-              className="block text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              {t("favorites.favorites")}
-            </a>
+            <div className="flex items-center space-x-2">
+              <Heart size={20} />
+              <a
+                href="#"
+                className="block text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                {t("favorites.favorites")}
+              </a>
+            </div>
 
             <Link
               to="/"
@@ -236,18 +217,30 @@ const Header = () => {
               {t("option.contact")}
             </Link>
 
-            <div className="border-t border-gray-200 pt-3 flex justify-between items-center py-1">
+            <div className="border-t border-gray-200 pt-3 flex justify-between items-center py-1 z-60">
               {usuario ? (
                 <button className="text-blue-600" onClick={handleLogout}>
                   {t("login.logout")}
                 </button>
               ) : (
-                <Link
-                  to="/register"
-                  className="text-blue-600 hover:text-blue-700 transition-colors"
-                >
-                  {t("login.register")}
-                </Link>
+                <>
+                  <div>
+                    <Link
+                      to="/register"
+                      className="text-blue-600 hover:text-blue-700 transition-colors"
+                    >
+                      {t("login.register")}
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      to="/login"
+                      className="text-blue-600 hover:text-blue-700 transition-colors"
+                    >
+                      {t("login.login")}
+                    </Link>
+                  </div>
+                </>
               )}
             </div>
           </div>
