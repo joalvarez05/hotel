@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
         autoPlay
         muted
         loop
-        playsinline
+        playsInline
       >
         <source src={bannerHero} type="video/mp4" />
         <source src={bannerHero} type="video/webm" />

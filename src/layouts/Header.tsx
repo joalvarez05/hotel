@@ -78,7 +78,7 @@ const Header = () => {
             <div className="relative" ref={languageRef}>
               <button
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors"
+                className="flex cursor-pointer items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors"
               >
                 <Globe size={20} />
                 <span>{t("header.language")}</span>
@@ -86,13 +86,13 @@ const Header = () => {
               {isLanguageOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-200">
                   <button
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    className="block px-4 py-2 text-gray-700 w-full cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => changeLanguage("en")}
                   >
                     {t("header.english")}
                   </button>
                   <button
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    className="block px-4 py-2 text-gray-700 w-full cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => changeLanguage("es")}
                   >
                     {t("header.spanish")}
