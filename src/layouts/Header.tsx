@@ -68,24 +68,24 @@ const Header = () => {
                     className="block px-4 py-2 text-gray-700 w-full cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => changeLanguage("en")}
                   >
-                    {t("header.english")}
+                    🇬🇧 {t("header.english")}
                   </button>
                   <button
                     className="block px-4 py-2 text-gray-700 w-full cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => changeLanguage("es")}
                   >
-                    {t("header.spanish")}
+                    🇪🇸 {t("header.spanish")}
                   </button>
                 </div>
               )}
             </div>
-            <a
-              href="#"
+            <Link
+              to="/error"
               className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Heart size={20} />
               <span>{t("favorites.favorites")}</span>
-            </a>
+            </Link>
             {usuario ? (
               <>
                 <FaRegUserCircle size={24} />
@@ -183,13 +183,13 @@ const Header = () => {
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={() => changeLanguage("en")}
                   >
-                    {t("header.english")}
+                    🇬🇧 {t("header.english")}
                   </button>
                   <button
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
                     onClick={() => changeLanguage("es")}
                   >
-                    {t("header.spanish")}
+                    🇪🇸 {t("header.spanish")}
                   </button>
                 </div>
               )}
@@ -219,17 +219,9 @@ const Header = () => {
 
             <div className="border-t border-gray-200 pt-3 flex justify-between items-center py-1 z-60">
               {usuario ? (
-                <>
-                  <button className="text-blue-600" onClick={handleLogout}>
-                    {t("login.logout")}
-                  </button>
-                  <Link
-                    to={role === "RECEPTIONIST" ? "/dashboard" : "/userProfile"}
-                    className="text-black font-semibold"
-                  >
-                    {usuario}
-                  </Link>
-                </>
+                <button className="text-blue-600" onClick={handleLogout}>
+                  {t("login.logout")}
+                </button>
               ) : (
                 <>
                   <div>

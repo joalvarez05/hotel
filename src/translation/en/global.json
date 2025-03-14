@@ -8,7 +8,7 @@
     "favorites": "Favorites"
   },
   "login": {
-    "login": "Login",
+    "login": "Log In",
     "logout": "Logout",
     "register": "Register",
     "email": "Email",
@@ -19,7 +19,7 @@
     "submit": "Submit"
   },
   "option": {
-    "option": "Option",
+    "option": "Options",
     "home": "Home",
     "gallery": "Gallery",
     "contact": "Contact",
