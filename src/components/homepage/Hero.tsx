@@ -10,15 +10,16 @@ const Hero: React.FC = () => {
       id="hero"
     >
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover brightness-70"
         autoPlay
         muted
         loop
+        playsinline
       >
         <source src={bannerHero} type="video/mp4" />
         <source src={bannerHero} type="video/webm" />
       </video>
-      <div className="absolute bottom-0 left-0 w-full h-72 full bg-gradient-to-b from-transparent to-gray-50 z-10"></div>
+      <div className="absolute bottom-0 left-0 w-full h-32 full bg-gradient-to-b from-transparent to-gray-50 z-10"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
