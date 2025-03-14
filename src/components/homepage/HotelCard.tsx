@@ -2,24 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import hotels from "../../data/hotel"; // Import from your external file
+import hotels from "../../data/hotel";
 
-// Countdown Timer Component
 const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState(3600); // 1 hour in seconds
+  const [timeLeft, setTimeLeft] = useState(3600);
 
   useEffect(() => {
-    // Check if we have a stored end time
     const storedEndTime = localStorage.getItem("dealsEndTime");
     let endTime;
 
     if (storedEndTime) {
       endTime = parseInt(storedEndTime, 10);
-      // Calculate remaining time
       const currentTime = Math.floor(Date.now() / 1000);
       const remaining = endTime - currentTime;
 
-      // If timer expired, reset it
       if (remaining <= 0) {
         endTime = Math.floor(Date.now() / 1000) + 3600;
         localStorage.setItem("dealsEndTime", endTime.toString());
@@ -28,7 +24,6 @@ const CountdownTimer = () => {
         setTimeLeft(remaining);
       }
     } else {
-      // Set end time for 1 hour from now
       endTime = Math.floor(Date.now() / 1000) + 3600;
       localStorage.setItem("dealsEndTime", endTime.toString());
     }
@@ -62,7 +57,6 @@ const CountdownTimer = () => {
   );
 };
 
-// Enhanced HotelCard component
 interface HotelCardProps {
   image: string;
   title: string;
@@ -140,7 +134,7 @@ const addDealsToHotels = (hotelData: Hotel[]): Hotel[] => {
 
     return {
       ...hotel,
-      location: Math.floor(Math.random() * 3 + 1).toString(), // Random floor 1-3
+      location: Math.floor(Math.random() * 3 + 1).toString(),
       originalTitle: hotel.title,
       deal: dealPrice,
       link: "#",

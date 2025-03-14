@@ -6,6 +6,7 @@ import fetchRegister from "@/services/fetchRegister";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 import { BackgroundBeams } from "@/assets/styles/bgLogin/BackgroundBeams";
+import { useTranslation } from "react-i18next";
 
 interface IFormInputs {
   name: string;
@@ -60,6 +61,7 @@ const RegisterForm = () => {
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
   });
+  const [t] = useTranslation("global");
 
   const url = "auth/register";
   const onSubmit = async (data: IFormInputs) => {
@@ -81,15 +83,15 @@ const RegisterForm = () => {
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <div className="pt-6 pb-8 sm:mx-auto sm:w-full sm:max-w-md">
               <h2 className="text-center text-3xl font-extrabold text-blue-600">
-                Crear una cuenta
+                {t("registerform.account")}
               </h2>
               <p className="mt-2 text-center text-sm text-gray-600">
-                ¿Ya tienes una cuenta?{" "}
+                {t("registerform.haveaacount")}{" "}
                 <Link
                   to="/login"
                   className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                  Ingrese aquí
+                  {t("registerform.register")}
                 </Link>
               </p>
             </div>
@@ -99,7 +101,7 @@ const RegisterForm = () => {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Nombre
+                  {t("registerform.name")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -122,7 +124,7 @@ const RegisterForm = () => {
                   htmlFor="lastname"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Apellido
+                  {t("registerform.lastname")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -145,7 +147,7 @@ const RegisterForm = () => {
                   htmlFor="username"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Nombre de Usuario
+                  {t("registerform.username")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -167,7 +169,7 @@ const RegisterForm = () => {
                   htmlFor="dni"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  DNI
+                  {t("registerform.dni")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -189,7 +191,7 @@ const RegisterForm = () => {
                   htmlFor="address"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Dirección
+                  {t("registerform.address")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -212,7 +214,7 @@ const RegisterForm = () => {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Email
+                  {t("registerform.email")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -235,7 +237,7 @@ const RegisterForm = () => {
                   htmlFor="phoneNumber"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Teléfono
+                  {t("registerform.phone")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -258,7 +260,7 @@ const RegisterForm = () => {
                   htmlFor="password"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Contraseña
+                  {t("registerform.password")}
                 </label>
                 <div className="mt-1">
                   <input
@@ -279,7 +281,7 @@ const RegisterForm = () => {
                   htmlFor="confirmPassword"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Confirmar Contraseña
+                  {t("registerform.confirmpassword")}
                 </label>
                 <div className="mt-1">
                   <input

@@ -4,8 +4,10 @@ import useSearchStore, { Room } from "@/hooks/useSearchStore";
 import { motion } from "framer-motion";
 import useScrollAnimation from "@/hooks/useInView.ts";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const RoomListing: React.FC = () => {
+  const [t] = useTranslation("global");
   const { rooms, roomType } = useSearchStore();
   const { ref, inView } = useScrollAnimation();
   const navigate = useNavigate();
@@ -51,7 +53,7 @@ const RoomListing: React.FC = () => {
       {rooms.length > 0 ? (
         <>
           <h2 className="text-2xl pt-6 pb-2 font-bold text-center text-black mb-8">
-            Habitaciones disponibles{" "}
+            {t("roomlisting.availability")}{" "}
             {roomType && ` - ${getRoomTypeName(roomType)}`}
           </h2>
 
@@ -82,7 +84,7 @@ const RoomListing: React.FC = () => {
                       onClick={() => addReservation(room)}
                       className="inline-block bg-green-300 cursor-pointer text-black font-medium px-3 py-1 rounded-full text-sm"
                     >
-                      Reservar
+                      {t("roomlisting.bookNow")}
                     </button>
                   </div>
                 </div>
@@ -117,10 +119,10 @@ const RoomListing: React.FC = () => {
       ) : (
         <div className="text-center py-10">
           <h2 className="text-2xl font-bold text-gray-700">
-            No hay habitaciones disponibles
+          {t("roomlisting.textone")}
           </h2>
           <p className="text-gray-500 max-w-md mx-auto">
-            Por favor, intenta con diferentes criterios de búsqueda.
+          {t("roomlisting.texttwo")}.
           </p>
         </div>
       )}

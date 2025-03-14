@@ -1,0 +1,315 @@
+{
+  "header": {
+    "language": "Language",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "favorites": {
+    "favorites": "Favorites"
+  },
+  "login": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "rememberMe": "Remember Me",
+    "submit": "Submit"
+  },
+  "option": {
+    "option": "Option",
+    "home": "Home",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "register": "Register"
+  },
+  "footer": {
+    "about": "About Luxe Haven",
+    "social": "Our social networks",
+    "company": "Company",
+    "contact": "Contact Us",
+    "location": "Location",
+    "services": "Services",
+    "questions": "Frequently Asked Questions",
+    "book": "How to Book",
+    "promotions": "Promotions",
+    "payment": "Payments and Security",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy",
+    "offers": "RECEIVE ALL OFFERS IN YOUR EMAIL",
+    "subscribe": "Subscribe to our newsletter",
+    "button": "Send",
+    "mail": "Add your mail",
+    "email_placeholder": "Enter your email",
+    "email_required": "Email is required",
+    "email_invalid": "Invalid email",
+    "newsletter_title": "Subscribe to the newsletter",
+    "sending": "Sending...",
+    "send": "Send"
+  },
+  "hero": {
+    "title": "Welcome to Luxe Haven",
+    "subtitle": "Find the best rooms at the best price",
+    "cta": "Book Now"
+  },
+  "searchbar": {
+    "title": "Save up to 45% on your next hotel stay",
+    "subtitle": "Find your ideal room",
+    "roomType": "Room Type",
+    "single": "Single Room",
+    "double": "Double Room",
+    "triple": "Triple Room",
+    "quadruple": "Quadruple Room",
+    "quintuple": "Quintuple Room",
+    "suite": "Suite",
+    "adults": "Adults",
+    "children": "Children",
+    "rooms": "Rooms",
+    "ready": "Ready",
+    "findroom": "Find Rooms",
+    "search": "Search"
+  },
+  "roomlisting": {
+    "availability": "Availability Rooms",
+    "bookNow": "Book Now",
+    "textone": "There are no rooms available",
+    "texttwo": "Please try different search criteria."
+  },
+  "hotelbanner": {
+    "pool": "Pool",
+    "wifi": "Free Wifi",
+    "workspace": "Workspace",
+    "breakfast": "Dining room",
+    "energy": "Free energy",
+    "gym": "Gym",
+    "spa": "Spa",
+    "services": "Others services",
+    "textone": "Our best amenities",
+    "texttwo": "Book today, enjoy tomorrow with our premium experience",
+    "book": "Book Now",
+    "titleone": "Tranquillity",
+    "titletwo": "Comfort",
+    "titlethree": "Elegance",
+    "titlefour": "Relaxation",
+    "titlefive": "Silence"
+  },
+  "spasection": {
+    "title": "Your wellness refuge in the heart of",
+    "textone": "Enjoy our spa",
+    "texttwo": "Premium Experience",
+    "winner": "Excellence Award 2025",
+    "off": "Get discount",
+    "amenities": {
+      "textone": "Therapeutic Massages",
+      "texttwo": "Our certified therapists customize each session to relieve tension and restore balance to your body.",
+      "textthree": "Access without accommodation",
+      "textfour": "Enjoy all our premium facilities without having to stay overnight. Perfect for a day of relaxation and well-being."
+    }
+  },
+  "spaSlides": {
+    "title1": "Enjoy as a Couple",
+    "title2": "Relaxation Area",
+    "title3": "Beach View"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "What are the check-in and check-out times?",
+        "answer": "Check-in starts from 3:00 PM, and check-out must be done before 11:00 AM. If you need early check-in or late check-out, please contact us in advance to check availability."
+      },
+      {
+        "question": "What amenities are included in the rooms?",
+        "answer": "Our rooms are equipped with free Wi-Fi, air conditioning, cable TV, minibar, safe, private bathroom with toiletries, and daily housekeeping."
+      },
+      {
+        "question": "Do the rooms have a balcony or sea view?",
+        "answer": "Some of our rooms have balconies and panoramic sea views. You can select this option when booking or check availability with our team."
+      },
+      {
+        "question": "Are pets allowed in the rooms?",
+        "answer": "We accept pets in specific rooms for an additional charge. We recommend contacting the hotel before your arrival to know the conditions and availability."
+      },
+      {
+        "question": "Is breakfast included in the rooms?",
+        "answer": "Yes, breakfast is included in most of our rates. We offer a varied buffet breakfast with sweet and savory options, as well as gluten-free and vegetarian alternatives."
+      },
+      {
+        "question": "Do the rooms have a kitchen or microwave?",
+        "answer": "Some suites and apartments include a kitchenette with microwave, fridge, and kitchen utensils. If you need this amenity, please indicate it when booking."
+      },
+      {
+        "question": "Can extra beds or cribs be added to the room?",
+        "answer": "Yes, we offer extra beds and cribs for children upon request and subject to availability. Additional charges may apply depending on the rate booked."
+      }
+    ]
+  },
+  "spasectiondata": {
+    "reviews": [
+      {
+        "text": "The best spa experience I have ever had. The staff is incredibly attentive and the facilities are top notch. I will be back soon!",
+        "author": "Maria"
+      },
+      {
+        "text": "I have never felt so good as when I left the spa! A unique experience.",
+        "author": "John"
+      }
+    ]
+  },
+  "spaSlidesone": {
+    "title1": "Tranquillity",
+    "title2": "Elegance",
+    "title3": "Relax",
+    "title4": "Silence",
+    "title5": "Comfort"
+  },
+  "servicecard": {
+    "title1": "Rooms",
+    "title2": "Dining Room",
+    "title3": "Meeting Room",
+    "title4": "Facilities",
+    "title5": "Wedding Package"
+  },
+  "weather": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "intro": "Check the weather in {{city}} for the day of your arrival and prepare your trip in advance.",
+    "feels_like": "Feels like: ",
+    "humidity": "Humidity: ",
+    "today": "Today",
+    "location_title": "Want to know where we are?",
+    "location_description": "Visit us in the heart of Recoleta, in the center of the Autonomous City of Buenos Aires. We are waiting for you with everything you need!",
+    "clear": "Clear Sky",
+    "rain": "Rain",
+    "cloudy": "Cloudy",
+    "clouds": "Cloudy"
+  },
+  "homepage": {
+    "title": "Unmissable hotel deals",
+    "title2": "There are no offers available at this time.",
+    "title3": "Your browser does not support the audio tag."
+  },
+  "hotelcard": {
+    "night": "per night",
+    "book": "Book now"
+  },
+  "loginform": {
+    "email": "Email or Username",
+    "password": "password",
+    "remindme": "remember me",
+    "forgotpassword": "¿Forgot your password??",
+    "notcount": "¿You don't have an account?",
+    "register": "Register here"
+  },
+  "registerform": {
+    "email": "Email",
+    "password": "Password",
+    "confirmpassword": "Confirm Password",
+    "phone": "Phone",
+    "address": "Address",
+    "dni": "DNI",
+    "username": "Username",
+    "lastname": "Lastname",
+    "name": "Name",
+    "register": "Enter here",
+    "haveaacount": "¿Already have an account You?",
+    "account": "Create account"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We are here to help you.",
+    "description": "Fill out the form or send us an email or call us.",
+    "address": "Address",
+    "textone": "Find us easily in the heart of Recoleta, Buenos Aires. We are located in one of the most emblematic areas of the city, surrounded by culture, history and excellent connections.",
+    "texttwo": "Contact us",
+    "name": "Name",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "discount": {
+    "textone": "Discount Confirmed!",
+    "texttwo": "To use your 30% discount, present this ticket at reception.",
+    "textthree": "I shared this code with the receptionist:",
+    "textfour": "Copy code",
+    "textfive": "Back to top"
+  },
+  "form": {
+    "register": "Register Guest",
+    "name": "Name",
+    "lastname": "Lastname",
+    "dni": "DNI",
+    "email": "Email",
+    "phone": "Phone",
+    "room": "Room",
+    "roomstatus": "Room status",
+    "type": "Type",
+    "state": "State",
+    "guest": "Guest",
+    "contact": "Contact",
+    "checkout": "Checkout"
+  },
+  "qrcode": {
+    "only": "Only",
+    "days": "days",
+    "textone": "¡Come and enjoy our spa without having to stay.!",
+    "texttwo": "EXCLUSIVE",
+    "textthree": "Benefits included:",
+    "textfour": "Access to thermal pool and sauna",
+    "textfive": "30 minutes of relaxing massage",
+    "textsix": "Welcome drink",
+    "street": "2355 street ficticia, Recoleta",
+    "week": "Mon-Sun",
+    "book": "Book now",
+    "textseven": "¡Pay directly at the store by showing your code!"
+  },
+  "reservationform": {
+    "data": "Your Data",
+    "datainformation": "Reservation holder's information.",
+    "name": "Name",
+    "lastname": "Last Name",
+    "phone": "Phone",
+    "nacionality": "Nationality",
+    "selectnacionality": "Select Nationality",
+    "countryone": "Brazil",
+    "countrytwo": "Mexico",
+    "countrythree": "Peru",
+    "other": "Other",
+    "typeid": "ID Type",
+    "select": "Select",
+    "dni": "DNI",
+    "passport": "Passport",
+    "id": "ID Card",
+    "idnumber": "ID Number",
+    "email": "Email Address",
+    "wish": "Special Requests",
+    "paymentmethod": "Payment Method",
+    "payment": "100% Advance Payment",
+    "confirmbook": "Confirm the reservation and ensure availability",
+    "card": "Select Card",
+    "paypal": "Pay with PayPal",
+    "textone": "Pay securely using your PayPal account",
+    "texttwo": "I accept terms and conditions",
+    "nights": "NUMBER OF NIGHTS",
+    "checkin": "CHECK-IN",
+    "checkout": "CHECK-OUT",
+    "polits": "CANCELLATION POLICY",
+    "cancellation": "Non-Refundable",
+    "person": "Persons",
+    "adults": "Adults",
+    "children": "Children",
+    "rooms": "ROOM",
+    "totalroom": "TOTAL ROOM: ",
+    "tax": "Taxes:",
+    "booking": "Booking Fee:",
+    "confirmationbook": "Confirm Booking",
+    "textthree": "Available for non-resident foreigners",
+    "click": "Click here"
+  }
+}

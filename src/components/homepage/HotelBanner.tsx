@@ -12,43 +12,48 @@ import { BsHouseDoor } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import useScrollAnimation from "@/hooks/useInView";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function HotelBanner() {
+  const { t } = useTranslation("global");
+
   const { ref, inView } = useScrollAnimation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const amenities = [
     {
       icon: <FaWifi className="text-indigo-400 text-xl" />,
-      name: "Libre Wifi",
+      name: t("hotelbanner.wifi"),
     },
     {
       icon: <FaSwimmingPool className="text-indigo-400 text-xl" />,
-      name: "Pileta",
+      name: t("hotelbanner.pool"),
     },
     {
       icon: <BsHouseDoor className="text-indigo-400 text-xl" />,
-      name: "Zona de trabajo",
+      name: t("hotelbanner.workspace"),
     },
     {
       icon: <FaUtensils className="text-indigo-400 text-xl" />,
-      name: "Comedor",
+      name: t("hotelbanner.breakfast"),
     },
     {
       icon: <MdElectricalServices className="text-purple-400 text-xl" />,
-      name: "Energía libre",
+      name: t("hotelbanner.energy"),
     },
     {
       icon: <MdFitnessCenter className="text-purple-400 text-xl" />,
-      name: "Gym",
+      name: t("hotelbanner.gym"),
     },
-    { icon: <MdSpa className="text-purple-400 text-xl" />, name: "Spa" },
+    {
+      icon: <MdSpa className="text-purple-400 text-xl" />,
+      name: t("hotelbanner.spa"),
+    },
     {
       icon: <MdMoreHoriz className="text-purple-400 text-xl" />,
-      name: "Otros servicios",
+      name: t("hotelbanner.services"),
     },
   ];
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === hotelSlides.length - 1 ? 0 : prev + 1));
   };
@@ -75,10 +80,10 @@ function HotelBanner() {
           <div className="p-8 md:p-12 flex flex-col justify-center ">
             <div className="mb-12 text-center sm:text-start">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Nuestras mejores comodidades
+                {t("hotelbanner.textone")}
               </h1>
               <p className="text-slate-400 text-lg mb-8">
-                Reservá hoy, disfrutá mañana con nuestra experiencia premium
+                {t("hotelbanner.texttwo")}
               </p>
             </div>
 
@@ -119,7 +124,9 @@ function HotelBanner() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
-                  <h2 className="text-3xl font-bold mb-2">{slide.title}</h2>
+                  <h2 className="text-3xl font-bold mb-2">
+                    {t(`spaSlidesone.title${index + 1}`)}
+                  </h2>
                   <div className="flex items-center justify-between">
                     <div className="flex space-x-2">
                       {hotelSlides.map((_, dotIndex) => (
@@ -140,7 +147,7 @@ function HotelBanner() {
                       title="Ir a reservar una habitación"
                       className="px-4 flex py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-medium transition-all hover:shadow-lg hover:shadow-blue-500/30"
                     >
-                      Reservar ahora
+                      {t("hotelbanner.book")}
                       <ChevronRight className="w-5 h-5 align-middle" />
                     </Link>
                   </div>

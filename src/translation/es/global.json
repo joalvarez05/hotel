@@ -1,0 +1,315 @@
+{
+    "header": {
+        "language": "Idioma",
+        "english": "Inglés",
+        "spanish": "Español"
+    },
+    "favorites": {
+        "favorites": "Favoritos"
+    },
+    "login": {
+        "login": "Iniciar sesión",
+        "logout": "Cerrar sesión",
+        "register": "Registrarse",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar contraseña",
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "rememberMe": "Recuérdame",
+        "submit": "Enviar"
+    },
+    "option": {
+        "option": "Opción",
+        "home": "Inicio",
+        "gallery": "Galería",
+        "contact": "Contacto",
+        "register": "Registrar"
+    },
+    "footer": {
+        "about": "Acerca de Luxe Haven",
+        "social": "Nuestras redes sociales",
+        "company": "Empresa",
+        "contact": "Contacto",
+        "location": "Ubicación",
+        "services": "Servicios",
+        "questions": "Preguntas frecuentes",
+        "book": "Cómo reservar",
+        "promotions": "Promociones",
+        "payment": "Pagos y seguridad",
+        "terms": "Términos y condiciones",
+        "privacy": "Privacidad",
+        "offers": "RECIBE TODAS LAS OFERTAS EN TU EMAIL",
+        "subscribe": "Suscríbete a nuestra newsletter",
+        "button": "Enviar",
+        "mail": "Ingresa tu email",
+        "email_placeholder": "Ingresa tu email",
+        "email_required": "El email es requerido",
+        "email_invalid": "Email inválido",
+        "newsletter_title": "Suscribirse a la newsletter",
+        "sending": "Enviando...",
+        "send": "Enviar"
+    },
+    "hero": {
+        "title": "Bienvenido a Luxe Haven",
+        "subtitle": "Encontrá las mejores habitaciones al mejor precio",
+        "cta": "Reservar Ahora"
+    },
+    "searchbar": {
+        "title": "Ahorra hasta un 45% en tu próxima estadía en hotel",
+        "subtitle": "Encontrá tu habitación ideal",
+        "roomType": "Tipo de habitación",
+        "single": "Habitación Individual",
+        "double": "Habitación Doble",
+        "triple": "Habitación Triple",
+        "quadruple": "Habitación Cuádruple",
+        "quintuple": "Habitación Quíntuple",
+        "suite": "Suite",
+        "adults": "Adultos",
+        "children": "Niños",
+        "rooms": "habitaciones",
+        "ready": "Listo",
+        "findroom": "Buscando habitaciones",
+        "search": "Buscar"
+    },
+    "roomlisting": {
+        "availability": "Habitaciones disponibles",
+        "bookNow": "Reservar",
+        "textone": "No hay habitaciones disponibles",
+        "texttwo": "Por favor, intenta con diferentes criterios de búsqueda."
+    },
+    "hotelbanner": {
+        "pool": "Pileta",
+        "wifi": "Wifi libre",
+        "workspace": "Zona de trabajo",
+        "breakfast": "Comedor",
+        "energy": "Energía libre",
+        "gym": "Gym",
+        "spa": "Spa",
+        "services": "Otros servicios",
+        "textone": "Nuestras mejores comodidades",
+        "texttwo": "Reservá hoy, disfrutá mañana con nuestra experiencia premium",
+        "book": "Reservar ahora",
+        "titleone": "Tranquilidad",
+        "titletwo": "Comodidad",
+        "titlethree": "Elegancia",
+        "titlefour": "Relaxs",
+        "titlefive": "Silencio"
+    },
+    "spasection": {
+        "title": "Tu refugio de bienestar en el corazón de",
+        "textone": "Disfrutá de nuestro spa",
+        "texttwo": "Experiencia Premium",
+        "winner": "Premio Excelencia 2025",
+        "off": "Obtener descuento",
+        "amenities": {
+            "textone": "Masajes Terapéuticos",
+            "texttwo": "TratamientosNuestros terapeutas certificados personalizan cada sesión para aliviar tensiones y restaurar el equilibrio de tu cuerpo.",
+            "textthree": "Acceso Sin Hospedaje",
+            "textfour": "Disfruta de todas nuestras instalaciones premium sin necesidad de hospedarte. Perfecto para un día de desconexión y bienestar."
+        }
+    },
+    "spaSlides": {
+        "title1": "Disfruta en Pareja",
+        "title2": "Zona de relajación",
+        "title3": "Vista a la playa"
+    },
+    "faq": {
+        "title": "Preguntas Frecuentes",
+        "questions": [
+            {
+                "question": "¿Cuáles son los horarios de check-in y check-out?",
+                "answer": "El check-in comienza a partir de las 15:00 horas, y el check-out debe realizarse antes de las 11:00 horas. Si necesitas un check-in temprano o un check-out tardío, por favor contáctanos con anticipación para verificar la disponibilidad."
+            },
+            {
+                "question": "¿Qué comodidades incluyen las habitaciones?",
+                "answer": "Nuestras habitaciones están equipadas con Wi-Fi gratuito, aire acondicionado, televisión por cable, minibar, caja fuerte, baño privado con artículos de aseo y servicio de limpieza diario."
+            },
+            {
+                "question": "¿Las habitaciones tienen balcón o vista al mar?",
+                "answer": "Algunas de nuestras habitaciones cuentan con balcón y vistas panorámicas al mar. Puedes seleccionar esta opción al momento de la reserva o consultar la disponibilidad con nuestro equipo."
+            },
+            {
+                "question": "¿Se permite el alojamiento de mascotas en las habitaciones?",
+                "answer": "Aceptamos mascotas en habitaciones específicas con un cargo adicional. Te recomendamos consultar con el hotel antes de tu llegada para conocer las condiciones y disponibilidad."
+            },
+            {
+                "question": "¿Las habitaciones incluyen desayuno?",
+                "answer": "Sí, el desayuno está incluido en la mayoría de nuestras tarifas. Ofrecemos un desayuno buffet variado con opciones dulces y saladas, así como alternativas sin gluten y vegetarianas."
+            },
+            {
+                "question": "¿Las habitaciones tienen cocina o microondas?",
+                "answer": "Algunas suites y apartamentos incluyen kitchenette con microondas, nevera y utensilios de cocina. Si necesitas esta comodidad, por favor indícalo al momento de la reserva."
+            },
+            {
+                "question": "¿Se pueden agregar camas supletorias o cunas a la habitación?",
+                "answer": "Sí, ofrecemos camas supletorias y cunas para niños bajo solicitud y sujeto a disponibilidad. Pueden aplicarse cargos adicionales dependiendo de la tarifa reservada."
+            }
+        ]
+    },
+    "spasectiondata": {
+        "reviews": [
+            {
+                "text": "La mejor experiencia de spa que he tenido. El personal es increíblemente atento y las instalaciones son de primera categoría. ¡Volveré pronto!",
+                "author": "Enzo B."
+            },
+            {
+                "text": "Nunca me había sentido tan bien como cuando salí del spa! Una experiencia única.",
+                "author": "José A."
+            }
+        ]
+    },
+    "spaSlidesone": {
+        "title1": "Tranquilidad",
+        "title2": "Elegancia",
+        "title3": "Relax",
+        "title4": "Silencio",
+        "title5": "Comodidad"
+    },
+    "servicecard": {
+        "title1": "Habitaciones",
+        "title2": "Comedor",
+        "title3": "Sala de reuniones",
+        "title4": "Instalaciones",
+        "title5": "Paquete de boda"
+    },
+    "weather": {
+        "sunday": "Domingo",
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado",
+        "intro": "Conocé el clima en {{city}} para el día de tu llegada y prepara tu viaje con anticipación.",
+        "feels_like": "Sensación térmica: ",
+        "humidity": "Humedad: ",
+        "today": "Hoy",
+        "location_title": "¿Quieres saber dónde estamos?",
+        "location_description": "Visítanos en el corazón de Recoleta, en pleno centro de la Ciudad Autónoma de Buenos Aires. ¡Te esperamos con todo lo que necesitas!",
+        "clear": "Cielo Claro",
+        "rain": "Lluvia",
+        "cloudy": "Nublado",
+        "clouds": "Nublado"
+    },
+    "homepage": {
+        "title": "Ofertas de hoteles imperdibles",
+        "title2": "No hay ofertas disponibles en este momento.",
+        "title3": "Tu navegador no soporta la etiqueta de audio."
+    },
+    "hotelcard": {
+        "night": "por noche",
+        "book": "Reservar ahora"
+    },
+    "loginform": {
+        "email": "Email o Nombre de Usuario",
+        "password": "Contraseña",
+        "remindme": "Recordarme",
+        "forgotpassword": "¿Olvidaste tu contraseña?",
+        "notcount": "¿No tienes una cuenta?",
+        "register": "Regístrate aquí"
+    },
+    "registerform": {
+        "email": "Email",
+        "password": "Contraseña",
+        "confirmpassword": "Confirmar contraseña",
+        "phone": "Teléfono",
+        "address": "Dirección",
+        "dni": "DNI",
+        "username": "Nombre de Usuario",
+        "lastname": "Apellido",
+        "name": "Nombre",
+        "register": "Ingrese aquí",
+        "haveaacount": "¿Ya tienes una cuenta?",
+        "account": "Crear cuenta"
+    },
+    "contact": {
+        "title": "Contacto",
+        "subtitle": "Estamos aquí para ayudarte.",
+        "description": "Rellena el formulario o envíanos un email o llámanos.",
+        "address": "Dirección",
+        "textone": "Encuéntranos fácilmente en el corazón de Recoleta, Buenos Aires. Estamos ubicados en una de las zonas más emblemáticas de la ciudad, rodeados de cultura, historia y excelentes conexiones.",
+        "texttwo": "Contáctanos",
+        "name": "Nombre",
+        "message": "Mensaje",
+        "send": "Enviar mensaje"
+    },
+    "discount": {
+        "textone": "¡Descuento Confirmado!",
+        "texttwo": "Para hacer uso de tu descuento del 30%, presenta este ticket en recepción.",
+        "textthree": "Comparti este código con la recepcionista:",
+        "textfour": "Copiar código",
+        "textfive": "Volver al inicio"
+    },
+    "form": {
+        "register": "Registrar Huésped",
+        "name": "Nombre",
+        "lastname": "Apellido",
+        "dni": "DNI",
+        "email": "Email",
+        "phone": "Teléfono",
+        "room": "Habitación",
+        "roomstatus": "Estado de la habitación",
+        "type": "Tipo",
+        "state": "Estado",
+        "guest": "Huésped",
+        "contact": "Contacto",
+        "checkout": "Checkout"
+    },
+    "qrcode": {
+        "only": "Solo",
+        "days": "días",
+        "textone": "¡Ven a disfrutar de nuestro spa sin necesidad de hospedarte!",
+        "texttwo": "EXCLUSIVO",
+        "textthree": "Beneficios incluidos:",
+        "textfour": "Acceso a piscina termal y sauna",
+        "textfive": "30 minutos de masaje relajante",
+        "textsix": "Bebida de bienvenida",
+        "street": "Calle ficticia 2355, Recoleta",
+        "week": "Lun-Dom",
+        "book": "Reservar ahora",
+        "textseven": "¡Paga directamente en el local mostrando tu código!"
+    },
+    "reservationform": {
+        "data": "Tus Datos",
+        "datainformation": "Datos del titular de la reserva.",
+        "name": "Nombre",
+        "lastname": "Apellido",
+        "phone": "Teléfono",
+        "nacionality": "Nacionalidad",
+        "selectnacionality": "Seleccione Nacionalidad",
+        "countryone": "Brasil",
+        "countrytwo": "México",
+        "countrythree": "Perú",
+        "other": "Otro",
+        "typeid": "Tipo de documento",
+        "select": "Elegir",
+        "dni": "DNI",
+        "passport": "Pasaporte",
+        "id": "Cédula de Identidado",
+        "idnumber": "Número de documento",
+        "email": "Dirección de e-mail",
+        "wish": "Peticiones Especiales",
+        "paymentmethod": "Forma de Pago",
+        "payment": "Pago Anticipado 100%",
+        "confirmbook": "Confirme la reserva y asegure disponibilidad",
+        "card": "Seleccione Tarjeta",
+        "paypal": "Pago con PayPal",
+        "textone": "Pague de forma segura utilizando su cuenta de PayPal",
+        "texttwo": "Acepto términos y condiciones",
+        "nights": "CANT. DE NOCHES",
+        "checkin": "LLEGADA",
+        "checkout": "SALIDA",
+        "polits": "POLÍTICA DE CANCEL.",
+        "cancellation": "No Reembolsable",
+        "person": "Personas",
+        "adults": "Adultos",
+        "children": "Niños",
+        "rooms": "HABITACIÓN",
+        "totalroom": "TOTAL HABITACIÓN: ",
+        "tax": "Impuestos:",
+        "booking": "Tasa reserva:",
+        "confirmationbook": "Confirmar reserva",
+        "textthree": "Disponible para extranjeros no residentes",
+        "click": "Click aquí"
+    }
+}

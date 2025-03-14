@@ -12,8 +12,14 @@ import Spa from "@/pages/Spa";
 import Confirmation from "@/pages/Confirmation";
 import Error from "@/pages/Error";
 import ProtectedRoute from "./ProtectedRoute";
+import { useTranslation } from "react-i18next";
 
 const AppRoutes = () => {
+  const { i18n } = useTranslation("global");
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language") || "es";
+    i18n.changeLanguage(savedLanguage);
+  }, [i18n]);
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);

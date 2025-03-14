@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { Gift, Clock, MapPin, Calendar, Info, CheckCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface CodigoQr {
   linkDescuento: string;
@@ -22,6 +23,7 @@ const infoCodigoQr: InfoCodigoQr = {
 
 const CodigoQr: React.FC<CodigoQr> = () => {
   const [discountCode, setDiscountCode] = useState<string>("");
+  const [t] = useTranslation("global");
   const daysLeft = 7;
 
   useEffect(() => {
@@ -57,14 +59,11 @@ const CodigoQr: React.FC<CodigoQr> = () => {
             {infoCodigoQr.parrafo}
           </p>
 
-          {/* Nuevo mensaje destacado */}
           <div className="mt-4 bg-indigo-50 p-3 rounded-lg border-l-4 border-indigo-500">
             <div className="flex items-start gap-2">
               <span className="h-5 w-5 text-indigo-600 mt-0.5 flex-shrink-0 hidden sm:block md:block lg:block xl:block" />
               <p className="text-indigo-800 text-sm">
-                <span className="font-semibold">
-                  ¡Ven a disfrutar de nuestro spa sin necesidad de hospedarte!
-                </span>
+                <span className="font-semibold">{t("qrcode.textone")}</span>
               </p>
             </div>
           </div>
@@ -72,7 +71,7 @@ const CodigoQr: React.FC<CodigoQr> = () => {
           <div className="mt-5 flex justify-center">
             <div className="p-4 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200 relative">
               <div className="absolute -top-2 -right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full text-gray-800">
-                EXCLUSIVO
+                {t("qrcode.texttwo")}
               </div>
               <QRCodeSVG
                 value={`http://localhost:5173/descuento-masajes-30/${discountCode}`}
@@ -89,20 +88,20 @@ const CodigoQr: React.FC<CodigoQr> = () => {
           <div className="mt-4 space-y-2">
             <h3 className="font-semibold text-gray-800 flex items-center gap-1">
               <Info className="h-4 w-4 text-indigo-500" />
-              <span>Beneficios incluidos:</span>
+              <span>{t("qrcode.textthree")}</span>
             </h3>
             <ul className="text-sm text-gray-600 space-y-1.5">
               <li className="flex items-start gap-1.5">
                 <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Acceso a piscina termal y sauna</span>
+                <span>{t("qrcode.textfour")}</span>
               </li>
               <li className="flex items-start gap-1.5">
                 <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>30 minutos de masaje relajante</span>
+                <span>{t("qrcode.textfive")}</span>
               </li>
               <li className="flex items-start gap-1.5">
                 <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Bebida de bienvenida</span>
+                <span>{t("qrcode.textsix")}</span>
               </li>
             </ul>
           </div>
@@ -112,13 +111,13 @@ const CodigoQr: React.FC<CodigoQr> = () => {
             <div className="flex items-center gap-1">
               <MapPin className="h-3.5 w-3.5" />
               <span className="font-medium text-gray-600">
-                Calle ficticia 2355, Recoleta
+                {t("qrcode.street")}
               </span>
             </div>
             <div className="flex items-center gap-1">
               <Calendar className="h-3.5 w-3.5" />
               <span className="font-medium text-gray-600">
-                Lun-Dom: 10am-6pm
+                {t("qrcode.week")}: 10am-6pm
               </span>
             </div>
           </div>
@@ -130,13 +129,13 @@ const CodigoQr: React.FC<CodigoQr> = () => {
               title="Conseguir descuento"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center gap-2"
             >
-              <span>Reservar ahora</span>
+              <span>{t("qrcode.book")}</span>
               <span className="text-xs bg-white text-green-600 bg-opacity-20 px-2 py-0.5 rounded">
                 30% OFF
               </span>
             </a>
             <p className="mt-2 text-xs text-gray-500">
-              ¡Paga directamente en el local mostrando tu código!
+              {t("qrcode.textseven")}
             </p>
           </div>
         </div>

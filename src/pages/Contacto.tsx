@@ -2,13 +2,16 @@ import Footer from "@/layouts/Footer";
 import Header from "@/layouts/Header";
 import Contact from "@/components/homepage/Contact";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 const Contacto = () => {
+  const [t] = useTranslation("global");
   return (
     <>
       <Header />
       <div className="p-8 rounded-lg shadow-md w-full mx-auto my-16">
         <h1 className="font-bold text-2xl text-blue-600 text-center mt-10">
-          Luxe Haven | Contacto
+          Luxe Haven | {t("contact.title")}
         </h1>
         <div className="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl items-center justify-center">
           <motion.div
@@ -17,8 +20,8 @@ const Contacto = () => {
             transition={{ duration: 0.5 }}
           >
             <p className="text-lg leading-relaxed text-slate-500 mt-3">
-              Estamos aquí para ayudarte. <br />
-              Rellena el formulario o envíanos un email o llámanos.
+              {t("contact.subtitle")} <br />
+              {t("contact.description")}
             </p>
             <div className="mt-5">
               <div className="flex items-center mt-2 space-x-2 text-gray-600">
@@ -57,12 +60,10 @@ const Contacto = () => {
       <div className="w-full bg-gray-50 py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">
-            Ubicación
+            {t("contact.address")}
           </h2>
           <p className="text-lg font-semibold text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Encuéntranos fácilmente en el corazón de Recoleta, Buenos Aires.
-            Estamos ubicados en una de las zonas más emblemáticas de la ciudad,
-            rodeados de cultura, historia y excelentes conexiones.
+            {t("contact.textone")}
           </p>
           <div className="flex justify-center">
             <iframe

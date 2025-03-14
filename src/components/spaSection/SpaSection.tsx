@@ -15,23 +15,23 @@ import {
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
-const amenitiesData = [
-  {
-    icon: <Heart className="h-6 w-6 text-blue-700" />,
-    title: "Masajes Terapéuticos",
-    description:
-      "Nuestros terapeutas certificados personalizan cada sesión para aliviar tensiones y restaurar el equilibrio de tu cuerpo.",
-  },
-  {
-    icon: <Users className="h-6 w-6 text-blue-700" />,
-    title: "Acceso Sin Hospedaje",
-    description:
-      "Disfruta de todas nuestras instalaciones premium sin necesidad de hospedarte. Perfecto para un día de desconexión y bienestar.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const SpaSection: React.FC = () => {
+  const { t } = useTranslation("global");
+
+  const amenitiesData = [
+    {
+      icon: <Heart className="h-6 w-6 text-blue-700" />,
+      title: t("spasection.amenities.textone"),
+      description: t("spasection.amenities.texttwo"),
+    },
+    {
+      icon: <Users className="h-6 w-6 text-blue-700" />,
+      title: t("spasection.amenities.textthree"),
+      description: t("spasection.amenities.textfour"),
+    },
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -82,7 +82,7 @@ const SpaSection: React.FC = () => {
               <div className="flex items-center gap-1 mb-2">
                 <Award className="h-5 w-5 text-blue-700" />
                 <span className="text-sm font-medium text-gray-700">
-                  Premio Excelencia 2025
+                  {t("spasection.winner")}
                 </span>
               </div>
               <div className="flex items-center gap-1">
@@ -136,7 +136,7 @@ const SpaSection: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
                   <h2 className="text-3xl font-bold mb-2 text-white">
-                    {slide.title}
+                    {t(`spaSlides.title${index + 1}`)}
                   </h2>
                   <div className="flex items-center justify-between">
                     <div className="flex space-x-2">
@@ -158,7 +158,7 @@ const SpaSection: React.FC = () => {
                       title="Ir a obtener descuento"
                       className="px-4 flex items-center py-2 bg-gradient-to-r text-sm sm:text-base  from-blue-500 to-purple-500 rounded-lg text-white font-medium transition-all hover:shadow-lg hover:shadow-blue-500/30"
                     >
-                      Obtener descuento
+                      {t("spasection.off")}
                       <ChevronRight className="w-5 h-5 " />
                     </Link>
                   </div>
@@ -187,7 +187,7 @@ const SpaSection: React.FC = () => {
 };
 
 const FeatureCard: React.FC<{
-  icon: React.ReactNode; 
+  icon: React.ReactNode;
   title: string;
   description: string;
 }> = ({ icon, title, description }) => {

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { BackgroundBeams } from "@/assets/styles/bgLogin/BackgroundBeams";
 import fetchLogin from "@/services/fetchLogin";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 interface ILoginInputs {
   identifier: string;
@@ -27,7 +28,7 @@ const LoginForm: React.FC = () => {
   } = useForm<ILoginInputs>({
     resolver: yupResolver(schema),
   });
-
+  const [t] = useTranslation("global");
   const url = "auth/login";
 
   const onSubmit = async (data: ILoginInputs) => {
@@ -61,7 +62,7 @@ const LoginForm: React.FC = () => {
                 htmlFor="identifier"
                 className="block text-sm font-medium text-gray-700"
               >
-                Email o Nombre de Usuario
+                {t("loginform.email")}
               </label>
               <div className="mt-1">
                 <input
@@ -82,7 +83,7 @@ const LoginForm: React.FC = () => {
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-700"
               >
-                Contraseña
+                {t("loginform.password")}
               </label>
               <div className="mt-1">
                 <input
@@ -110,7 +111,7 @@ const LoginForm: React.FC = () => {
                   htmlFor="remember_me"
                   className="ml-2 block text-sm text-gray-900"
                 >
-                  Recordarme
+                  {t("loginform.remindme")}
                 </label>
               </div>
             </div>
@@ -138,15 +139,15 @@ const LoginForm: React.FC = () => {
               href="/forgot-password"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              ¿Olvidaste tu contraseña?
+              {t("loginform.forgotpassword")}
             </a>
             <p className="mt-8 text-center text-sm text-gray-600">
-              ¿No tienes una cuenta?{" "}
+              {t("loginform.notcount")}{" "}
               <a
                 href="/register"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
-                Regístrate aquí
+                {t("loginform.register")}
               </a>
             </p>
           </div>

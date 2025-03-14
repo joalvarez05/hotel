@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import useSearchStore from "@/hooks/useSearchStore.tsx";
 import fetchRooms from "@/services/fetchRooms";
 import { hoy, fechaMañana } from "@/utils/fechaActual";
+import { useTranslation } from "react-i18next";
 
 import "./home.css";
 
@@ -26,6 +27,7 @@ const SearchBar: React.FC = () => {
     setRoomType,
     handleGuestsChange,
   } = useSearchStore();
+  const [t] = useTranslation("global");
 
   const {
     register,
@@ -43,10 +45,8 @@ const SearchBar: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 mt-8 " id="searchBar">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold mb-2">
-          Ahorrá hasta un 45% en tu próxima estadía de hotel
-        </h2>
-        <h3 className="text-xl mb-2">Encontrá tu habitación ideal</h3>
+        <h2 className="text-2xl font-bold mb-2">{t("searchbar.title")}</h2>
+        <h3 className="text-xl mb-2">{t("searchbar.subtitle")}</h3>
       </div>
       <div className="bg-white rounded-lg shadow-xl py-4 px-3">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -60,13 +60,13 @@ const SearchBar: React.FC = () => {
                 onChange={(e) => setRoomType(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 appearance-none cursor-pointer"
               >
-                <option value="">Tipo de habitación</option>
-                <option value="single">Habitación Single</option>
-                <option value="double">Habitación Doble</option>
-                <option value="triple">Habitación Triple</option>
-                <option value="cuadruple">Habitación Cuadruple</option>
-                <option value="quintuple">Habitación Quintuple</option>
-                <option value="suite">Suite</option>
+                <option value="">{t("searchbar.roomType")}</option>
+                <option value="single">{t("searchbar.single")}</option>
+                <option value="double">{t("searchbar.double")}</option>
+                <option value="triple">{t("searchbar.triple")}</option>
+                <option value="cuadruple">{t("searchbar.quadruple")}</option>
+                <option value="quintuple">{t("searchbar.quintuple")}</option>
+                <option value="suite">{t("searchbar.suite")}</option>
               </select>
               <ChevronDown
                 className="absolute right-3 top-1/2 transform -translate-y-1/1 text-gray-400"
@@ -122,7 +122,9 @@ const SearchBar: React.FC = () => {
                     {!guests ? (
                       <span className="text-sm">Viajeros</span>
                     ) : (
-                      <span>{guests.adults} Adultos</span>
+                      <span>
+                        {guests.adults} {t("searchbar.adults")}
+                      </span>
                     )}
                     <br />
                   </div>
@@ -133,7 +135,7 @@ const SearchBar: React.FC = () => {
                 <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 p-4 z-50">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span>Adultos</span>
+                      <span>{t("searchbar.adults")}</span>
                       <div className="flex items-center gap-3">
                         <button
                           type="button"
@@ -183,7 +185,7 @@ const SearchBar: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span>Habitaciones</span>
+                      <span>{t("searchbar.rooms")}</span>
                       <div className="flex items-center gap-3">
                         <button
                           type="button"
@@ -211,7 +213,7 @@ const SearchBar: React.FC = () => {
                     onClick={() => setIsGuestsOpen(false)}
                     className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
                   >
-                    Listo
+                    {t("searchbar.ready")}
                   </button>
                 </div>
               )}
@@ -228,13 +230,13 @@ const SearchBar: React.FC = () => {
               <>
                 <div className="flex">
                   <span className="loader"></span>
-                  <span className="ms-12">Buscando habitaciones</span>
+                  <span className="ms-12">{t("searchbar.findroom")}</span>
                 </div>
               </>
             ) : (
               <>
                 <Search size={20} />
-                Buscar
+                {t("searchbar.search")}
               </>
             )}
           </button>

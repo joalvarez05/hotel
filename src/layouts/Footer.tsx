@@ -2,12 +2,13 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 interface INewsletterForm {
   email: string;
 }
-
 function Footer() {
+  const [t, i18n] = useTranslation("global");
   const {
     register,
     handleSubmit,
@@ -17,25 +18,18 @@ function Footer() {
 
   const onSubmit = async (data: INewsletterForm) => {
     try {
-      // Configuración para web3forms
-      const formData = new FormData();
-      formData.append("email", data.email);
-      formData.append("access_key", "8563bba6-aa5b-4520-b8d7-bebaaf8b13ae");
-      formData.append("subject", "Nueva suscripción a newsletter");
-      formData.append("from_name", "Luxe Haven Newsletter");
-
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("#", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data.email),
       });
+      console.log(response);
 
-      const result = await response.json();
-
-      if (result.success) {
+      if (response.ok) {
         toast.success("¡Te has suscrito con éxito!");
         reset();
-      } else {
-        toast.error("Hubo un problema al procesar tu solicitud.");
       }
     } catch (error) {
       if (error instanceof Error) {
@@ -43,21 +37,20 @@ function Footer() {
       }
     }
   };
-
   return (
-    <div className="bg-gray-100">
+    <div className=" bg-gray-100">
       <footer className="bg-gray-900 text-gray-300">
-        <div className="bg-blue-700">
+        <div className="bg-blue-700 ">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-white py-8">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-2">
                   <div>
                     <h3 className="text-sm font-medium">
-                      RECIBE TODAS LAS OFERTAS EN TU EMAIL
+                      {t("footer.offers")}
                     </h3>
                     <p className="text-lg font-semibold">
-                      Suscríbete a nuestra newsletter
+                      {t("footer.subscribe")}
                     </p>
                   </div>
                 </div>
@@ -67,15 +60,15 @@ function Footer() {
                 >
                   <input
                     type="email"
-                    placeholder="Ingresa tu email"
+                    placeholder={t("footer.email_placeholder")}
                     className={`px-4 py-2 rounded-lg bg-gray-100 w-full md:w-80 text-black ${
                       errors.email ? "border-red-500 border-2" : ""
                     }`}
                     {...register("email", {
-                      required: "El email es requerido",
+                      required: t("footer.email_required"),
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Email inválido",
+                        message: t("footer.email_invalid"),
                       },
                     })}
                     disabled={isSubmitting}
@@ -83,12 +76,12 @@ function Footer() {
                   />
                   <button
                     type="submit"
-                    title="Suscribirse a la newsletter"
+                    title={t("footer.newsletter_title")}
                     role="button"
                     className="bg-white cursor-pointer text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Enviando..." : "Enviar"}
+                    {isSubmitting ? t("footer.sending") : t("footer.send")}
                   </button>
                 </form>
               </div>
@@ -114,7 +107,7 @@ function Footer() {
               </p>
               <div className="mt-6">
                 <h4 className="font-medium mb-4 text-center md:text-left">
-                  Nuestras redes sociales
+                  {t("footer.social")}
                 </h4>
                 <div className="flex gap-4">
                   <a href="#" className="hover:text-blue-400 transition-colors">
@@ -131,12 +124,12 @@ function Footer() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">
-                Acerca de Luxe Haven
+                {t("footer.about")}
               </h3>
               <ul className="space-y-3">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Empresa
+                    {t("footer.company")}
                   </a>
                 </li>
                 <li>
@@ -144,7 +137,7 @@ function Footer() {
                     to="/contacto"
                     className="hover:text-white transition-colors"
                   >
-                    Contacto
+                    {t("footer.contact")}
                   </Link>
                 </li>
                 <li>
@@ -152,24 +145,24 @@ function Footer() {
                     to="/contacto"
                     className="hover:text-white transition-colors"
                   >
-                    Ubicación
+                    {t("footer.location")}
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">
-                Servicios
+                {t("footer.services")}
               </h3>
               <ul className="space-y-3">
                 <li>
                   <a href="#faq" className="hover:text-white transition-colors">
-                    Preguntas Frecuentes
+                    {t("footer.questions")}
                   </a>
                 </li>
                 <li>
                   <a href="#faq" className="hover:text-white transition-colors">
-                    Cómo Reservar
+                    {t("footer.book")}
                   </a>
                 </li>
                 <li>
@@ -177,14 +170,14 @@ function Footer() {
                     href="#ofertas"
                     className="hover:text-white transition-colors"
                   >
-                    Promociones
+                    {t("footer.promotions")}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">
-                Pagos y Seguridad
+                {t("footer.payment")}
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 <a href="#">
@@ -225,10 +218,10 @@ function Footer() {
           <div className="mt-10 pt-4 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">
-                Términos y Condiciones
+                {t("footer.terms")}
               </a>
               <a href="#" className="hover:text-white transition-colors">
-                Privacidad
+                {t("footer.privacy")}
               </a>
             </div>
             <p className="text-gray-400">

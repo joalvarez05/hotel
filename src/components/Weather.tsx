@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Cloud, CloudRain, Sun, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import useScrollAnimation from "@/hooks/useInView.ts";
+import { useTranslation } from "react-i18next";
 
 interface WeatherData {
   main: {
@@ -25,6 +26,7 @@ interface ForecastData {
 }
 
 const Weather: React.FC = () => {
+  const { t, i18n } = useTranslation("global");
   const { ref, inView } = useScrollAnimation();
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [forecast, setForecast] = useState<ForecastData | null>(null);
@@ -32,7 +34,6 @@ const Weather: React.FC = () => {
 
   const API_KEY = "6d51cd4aa4deb04d9eaa166f1616a848";
   const CITY = "Buenos Aires";
-  //el tiempo es en ms asi que si lo cambias usa ms. basicamente se guarda la response en localStorage para no realizar el pedido en cada montaje del componente.
   const CACHE_TIME = 5 * 60 * 1000;
 
   useEffect(() => {
@@ -56,10 +57,10 @@ const Weather: React.FC = () => {
         try {
           const [weatherResponse, forecastResponse] = await Promise.all([
             fetch(
-              `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=metric&appid=${API_KEY}&lang=es`
+              `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=metric&appid=${API_KEY}&lang=${i18n.language}`
             ),
             fetch(
-              `https://api.openweathermap.org/data/2.5/forecast?q=${CITY}&units=metric&appid=${API_KEY}&lang=es`
+              `https://api.openweathermap.org/data/2.5/forecast?q=${CITY}&units=metric&appid=${API_KEY}&lang=${i18n.language}`
             ),
           ]);
 
@@ -81,7 +82,7 @@ const Weather: React.FC = () => {
     };
 
     fetchData();
-  }, []);
+  }, [i18n.language]); 
 
   const getWeatherIcon = (main: string) => {
     switch (main.toLowerCase()) {
@@ -94,15 +95,26 @@ const Weather: React.FC = () => {
     }
   };
 
+  const translateWeatherDescription = (description: string) => {
+    const descriptionsMap: { [key: string]: string } = {
+      clear: t("weather.clear"),
+      rain: t("weather.rain"),
+      cloudy: t("weather.cloudy"),
+      clouds: t("weather.clouds"),
+      // Añade aquí más descripciones según sea necesario
+    };
+    return descriptionsMap[description.toLowerCase()] || description;
+  };
+
   const getDayName = (dateStr: string) => {
     const days = [
-      "Domingo",
-      "Lunes",
-      "Martes",
-      "Miércoles",
-      "Jueves",
-      "Viernes",
-      "Sábado",
+      t("weather.sunday"),
+      t("weather.monday"),
+      t("weather.tuesday"),
+      t("weather.wednesday"),
+      t("weather.thursday"),
+      t("weather.friday"),
+      t("weather.saturday"),
     ];
     const date = new Date(dateStr);
     return days[date.getDay()];
@@ -140,16 +152,15 @@ const Weather: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 2 }}
-        className=" rounded-lg overflow-hidden"
+        className="rounded-lg overflow-hidden"
       >
-        <div className="w-full max-w-7xl mx-auto justify-center grid grid-cols-1 md:grid-cols-2 gap-6 ">
-          <div className="p-2 ">
+        <div className="w-full max-w-7xl mx-auto justify-center grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-2">
             <h2 className="text-2xl font-bold text-center text-white mb-1">
               {CITY}
             </h2>
             <h3 className="text-md font-medium text-center text-white mb-6">
-              Conocé el clima en {CITY} para el día de tu llegada y prepara tu
-              viaje con anticipación.
+              {t("weather.intro", { city: CITY })}
             </h3>
 
             {weather && (
@@ -163,14 +174,14 @@ const Weather: React.FC = () => {
                         {Math.round(weather.main.temp)}°C
                       </span>
                       <p className="text-gray-600 capitalize mt-1">
-                        {weather.weather[0].description}
+                        {translateWeatherDescription(weather.weather[0].main)}
                       </p>
                       <p className="text-sm text-gray-500 mt-1">
-                        Sensación térmica: {Math.round(weather.main.feels_like)}
-                        °C
+                        {t("weather.feels_like")}:{" "}
+                        {Math.round(weather.main.feels_like)}°C
                       </p>
                       <p className="text-sm text-gray-500">
-                        Humedad: {weather.main.humidity}%
+                        {t("weather.humidity")}: {weather.main.humidity}%
                       </p>
                     </div>
                   </div>
@@ -184,7 +195,9 @@ const Weather: React.FC = () => {
                       className="bg-white py-2 rounded-lg shadow-sm text-center transform transition-transform duration-200 hover:scale-105"
                     >
                       <p className="font-semibold text-blue-900 mb-2">
-                        {index === 0 ? "Hoy" : getDayName(day.dt_txt)}
+                        {index === 0
+                          ? t("weather.today")
+                          : getDayName(day.dt_txt)}
                       </p>
                       <div className="flex justify-center">
                         {getWeatherIcon(day.weather[0].main)}
@@ -193,7 +206,7 @@ const Weather: React.FC = () => {
                         {Math.round(day.main.temp)}°C
                       </p>
                       <p className="text-sm text-gray-600 capitalize">
-                        {day.weather[0].description}
+                        {translateWeatherDescription(day.weather[0].main)}
                       </p>
                     </div>
                   ))}
@@ -204,13 +217,11 @@ const Weather: React.FC = () => {
 
           <div>
             <h4 className="text-3xl font-semibold text-white text-center mb-1">
-              ¿Quieres saber dónde estamos?
+              {t("weather.location_title")}
             </h4>
             <p className="text-md font-medium text-center text-white mb-6">
-              Visítanos en el corazón de Recoleta, en pleno centro de la Ciudad
-              Autónoma de Buenos Aires. ¡Te esperamos con todo lo que necesitas!
+              {t("weather.location_description")}
             </p>
-
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1234.7929356020893!2d-58.38880786249812!3d-34.588944528226406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca99c609fc2f%3A0x392ca99351808a75!2sRecoleta%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1740431473590!5m2!1ses-419!2sar"
               height="400"
