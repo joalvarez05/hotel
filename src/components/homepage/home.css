@@ -1,0 +1,24 @@
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.4;
+}
+
+.wave-separator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-separator svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 90px;
+}
+
+.wave-separator .shape-fill {
+  fill: #ffffff;
+}
