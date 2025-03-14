@@ -7,7 +7,7 @@ import useSearchStore from "@/hooks/useSearchStore.tsx";
 import { calculatePrice } from "@/utils/totalPrice";
 import toast from "react-hot-toast";
 import sonidoConfirmacion from "@/assets/confirmFormSound.mp3";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const schema = yup.object({
@@ -44,6 +44,7 @@ const schema = yup.object({
 type FormData = yup.InferType<typeof schema>;
 
 const ReservationForm = () => {
+  const navigate = useNavigate();
   const { checkIn, checkOut, guests } = useSearchStore();
   const reserva = sessionStorage.getItem("reserva");
   const reservaParseada = reserva ? JSON.parse(reserva) : null;
@@ -132,6 +133,7 @@ const ReservationForm = () => {
           audioRef.current?.play();
         }, 600);
         sessionStorage.clear();
+        navigate("/");
       }
     } catch (error) {
       console.error("Error:", error);
