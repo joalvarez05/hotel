@@ -48,7 +48,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <BackgroundBeams />
+      <BackgroundBeams className="hidden lg:block" />
       <div className="my-4 sm:mx-auto sm:w-full sm:max-w-md z-10">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <div className="sm:mx-auto sm:w-full sm:max-w-md pb-6">
