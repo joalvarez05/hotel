@@ -20,7 +20,7 @@ interface Room {
   typeRoom: {
     name: string;
   };
-  roomStatus: boolean | null;
+  roomStatus: string;
 }
 
 const schema = Yup.object().shape({
@@ -146,7 +146,9 @@ const Form: React.FC = () => {
                     <div
                       key={room.id}
                       className={`p-4 flex justify-between rounded-lg space-y-1 ${
-                        room.roomStatus === null ? "bg-green-100" : "bg-red-100"
+                        room.roomStatus === "AVAILABLE"
+                          ? "bg-green-100"
+                          : "bg-red-100"
                       }`}
                     >
                       <div>
@@ -158,15 +160,17 @@ const Form: React.FC = () => {
                         </p>
                         <p className="text-sm font-medium text-black">
                           Estado:{" "}
-                          {room.roomStatus === null
+                          {room.roomStatus === "AVAILABLE"
                             ? "Disponible"
-                            : room.roomStatus === true
+                            : room.roomStatus === "UNAVAILABLE"
                             ? "Ocupada"
                             : "En mantenimiento"}
                         </p>
                       </div>
                       <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-4 rounded cursor-pointer">
-                        {room.roomStatus ? "Check Out" : "Check In"}
+                        {room.roomStatus === "UNAVAILABLE"
+                          ? "Check Out"
+                          : "Check In"}
                       </button>
                     </div>
                   ))

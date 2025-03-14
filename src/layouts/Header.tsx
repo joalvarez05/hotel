@@ -219,9 +219,17 @@ const Header = () => {
 
             <div className="border-t border-gray-200 pt-3 flex justify-between items-center py-1 z-60">
               {usuario ? (
-                <button className="text-blue-600" onClick={handleLogout}>
-                  {t("login.logout")}
-                </button>
+                <>
+                  <button className="text-blue-600" onClick={handleLogout}>
+                    {t("login.logout")}
+                  </button>
+                  <Link
+                    to={role === "RECEPTIONIST" ? "/dashboard" : "/userProfile"}
+                    className="text-black font-semibold"
+                  >
+                    {usuario}
+                  </Link>
+                </>
               ) : (
                 <>
                   <div>
