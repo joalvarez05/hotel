@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { Gift, Clock, MapPin, Calendar, Info, CheckCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 interface CodigoQr {
   linkDescuento: string;
@@ -123,8 +124,8 @@ const CodigoQr: React.FC<CodigoQr> = () => {
           </div>
 
           <div className="mt-6 text-center">
-            <a
-              href={`http://localhost:5173/descuento-masajes-30/${discountCode}`}
+            <Link
+              to={`/descuento-masajes-30/${discountCode}`}
               aria-label="Link para conseguir descuento spa"
               title="Conseguir descuento"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center gap-2"
@@ -133,7 +134,7 @@ const CodigoQr: React.FC<CodigoQr> = () => {
               <span className="text-xs bg-white text-green-600 bg-opacity-20 px-2 py-0.5 rounded">
                 30% OFF
               </span>
-            </a>
+            </Link>
             <p className="mt-2 text-xs text-gray-500">
               {t("qrcode.textseven")}
             </p>
